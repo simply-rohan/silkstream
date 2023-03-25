@@ -1,0 +1,22 @@
+:root {
+    --primary-dark: rgb(47, 45, 50);
+    
+    /* Light mode color settings */
+    --primary-light: rgb(237, 235, 240);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* All of the styles for dark mode */
+    body {
+        background-color: var(--primary-dark);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    /* All of the styles for light mode */
+    body {
+        background-color: var(--primary-light);
+    }
+}
