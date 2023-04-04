@@ -1,0 +1,19 @@
+input {
+    border-radius: 20vh;
+    border: none;
+    padding: 0.5%;
+}
+
+input {
+    color: inherit;
+
+    font: inherit
+}
+
+input[type="text"], input[type="password"] {
+    background-color: var(--secondary);
+}
+
+input[type="submit"] {
+    background-color: var(--accent);
+}

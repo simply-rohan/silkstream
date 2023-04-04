@@ -1,22 +1,44 @@
-:root {
-    --primary-dark: rgb(47, 45, 50);
-    
-    /* Light mode color settings */
-    --primary-light: rgb(237, 235, 240);
-}
-
 @media (prefers-color-scheme: dark) {
 
-    /* All of the styles for dark mode */
-    body {
-        background-color: var(--primary-dark);
+    /* All of the colors for dark mode */
+
+    :root {
+        --primary: rgb(47, 45, 50);
+        --secondary:rgb(77, 75, 80); /* Brightens "primary" by 30 channel unit's */
+
+        color: white;
     }
 }
 
 @media (prefers-color-scheme: light) {
 
     /* All of the styles for light mode */
-    body {
-        background-color: var(--primary-light);
+    :root {
+        --primary: rgb(237, 235, 240);
+        --secondary: rgb(207, 205, 210); /* Darkens "primary" by 30 channel unit's */
+
+        color: black;
     }
+}
+
+:root {
+    /* Settings that are static throughout scheme changes */
+    --accent: rgb(153, 0, 255);
+
+    font-family:system-ui;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+* {
+    margin-bottom: 0.75%;
+}
+
+a {
+    text-decoration: none;
+
+    color: var(--accent);
+
 }
