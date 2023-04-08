@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
 </head>
+
 <body>
     <div class="showcase-container">
         <form class="login-form" method="post">
             {% for error in errors %}
-                <span class="error-message">{{error}}</span>
-                <br>
+            <span class="error-message">{{error}}</span>
+            <br>
             {% endfor %}
             <input type="text" name="username" placeholder="Username...">
             <input type="password" name="password" placeholder="Password...">
@@ -22,4 +24,5 @@
         <span>Don't have an account yet? <a href="{{ url_for('signup') }}">Sign Up</a></span>
     </div>
 </body>
+
 </html>

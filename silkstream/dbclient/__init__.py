@@ -21,16 +21,17 @@ class Directory:
 
     def __getitem__(self, item):
         # Determine of item is a file or directory
-        all_items = os.listdir(self.path)
-        all_files = [
-            name.replace(".json", "") for name in all_items if name.endswith(".json")
-        ]
-
+        # all_files = [
+        #    name.replace(".json", "") for name in all_items if os.path.isfile(os.path.join(self.path, name))
+        # ]
+        filenames = [
+            name.replace(".json", "") for name in next(os.walk(self.path))[2]
+        ]  # [] if no file
 
         # TODO: The system of checking if the target is a file is a rushed and cheeky
         # It's purpose it to allow users to enter the entry name with out having to add the .json suffix
 
-        if item in all_files:
+        if item in filenames:
             return File(os.path.join(self.path, item.replace(".json", "") + ".json"))
         else:
             return Directory(os.path.join(self.path, item))
