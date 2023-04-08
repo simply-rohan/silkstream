@@ -11,5 +11,17 @@
 </head>
 <body>
     
+    <div class="showcase-container">
+        <form class="signup-form" method="post">
+            {% for error in errors %}
+                <span class="error-message">{{error}}</span>
+                <br>
+            {% endfor %}
+            <input type="text" name="username" placeholder="Username...">
+            <input type="password" name="password" placeholder="Password...">
+            <input type="submit" value="Sign Up">
+        </form>
+        <span>Already part of the fun? <a href="{{ url_for('login') }}">Log In</a></span>
+    </div>
 </body>
 </html>

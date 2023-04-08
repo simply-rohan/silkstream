@@ -2,18 +2,38 @@ input {
     border-radius: 20vh;
     border: none;
     padding: 0.5%;
-}
 
-input {
     color: inherit;
 
-    font: inherit
+    font: inherit;
+
+    outline: none;
+
 }
 
-input[type="text"], input[type="password"] {
-    background-color: var(--secondary);
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--secondary) inset !important;
+    -webkit-text-fill-color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: var(--secondary) !important;
 }
 
 input[type="submit"] {
     background-color: var(--accent);
+}
+
+.error-message {
+    color: var(--error) !important;
+
+
+    display: block;
+
+    font-style: italic bold;
 }
