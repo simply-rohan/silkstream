@@ -8,6 +8,7 @@ from snowflake import SnowflakeGenerator, Snowflake
 
 from functools import wraps
 
+
 app = Flask(__name__)  # Create the flask instance
 
 # Secret key from `secrets.token_uslsafe()`. (e.g. Used to authenticate session)
@@ -51,11 +52,11 @@ def home():
 @app.route("/auth/login", methods=["POST", "GET"])
 @app.route("/auth/signin", methods=["POST", "GET"])
 def login():
-    if request.method == "GET": # Endpoint for login page
+    if request.method == "GET":  # Endpoint for login page
         errors = get_flashed_messages(category_filter=("error"))
         return render_template("auth/login.html", errors=errors)
 
-    else: # Authenticator for login page
+    else:  # Authenticator for login page
         username = request.form.get("username")
         password = request.form.get("password")
 
@@ -73,11 +74,11 @@ def login():
 @app.route("/auth/register", methods=["POST", "GET"])
 @app.route("/auth/signup", methods=["POST", "GET"])
 def signup():
-    if request.method == "GET": # Endpoint for sign up page
+    if request.method == "GET":  # Endpoint for sign up page
         errors = get_flashed_messages(category_filter=("error"))
         return render_template("auth/signup.html", errors=errors)
 
-    else: # Authenticator for sign up page
+    else:  # Authenticator for sign up page
         username = request.form.get("username")
         password = request.form.get("password")
 
@@ -92,7 +93,7 @@ def signup():
                 "profile": {"profile-picture": "guest.png", "bio": ""},
             }
 
-            session["username"] = username # Log in user
+            session["username"] = username  # Log in user
 
             return redirect(url_for("home"))
 
